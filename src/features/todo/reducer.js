@@ -15,7 +15,7 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         todos: [
           ...state.todos,
-          { id: payload, text: payload.text, completed: false },
+          { id: payload.id, text: payload.text, completed: false },
         ],
       };
     case TOGGLE_TODO:

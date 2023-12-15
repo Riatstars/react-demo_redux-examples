@@ -26,9 +26,11 @@ function TodoList() {
       <ul>
         {filteredTodos.map((todo) => (
           <li
-            id={todo.id}
-            key={todo.id}
-            onClick={() => dispatch(toggleTodo(todo.id))}
+            id={new Date(todo.id).toISOString()}
+            key={new Date(todo.id).toISOString()}
+            onClick={() => {
+              return dispatch(toggleTodo(todo.id));
+            }}
             style={{ textDecoration: todo.completed ? "line-through" : "none" }}
           >
             {todo.text}
